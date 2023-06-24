@@ -17,8 +17,6 @@ This is a solution to the [Insure landing page challenge on Frontend Mentor](htt
   - [Author](#author)
 
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
 ### The challenge
@@ -31,13 +29,13 @@ Users should be able to:
 
 ### Screenshot
 
-![](./images/screenshot/screencapture-127-0-0-1-5500-index-html-2023-06-24-16_28_37.png)
+![](./immges/../images/screenshot/screencapture-insure-landing-page-frontendmentor-netlify-app-2023-06-24-17_45_23.png)
 
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [GitHub solution](https://github.com/Trayshmhirk/insure-landing-page.git)
+- Live Site URL: [Hosted on Netlify](https://insure-landing-page-frontendmentor.netlify.app/)
 
 ## My process
 
