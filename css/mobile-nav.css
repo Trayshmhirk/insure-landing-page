@@ -38,7 +38,7 @@
         flex-direction: column;
         background: url(../images/bg/bg-pattern-mobile-nav.svg) no-repeat 0em 38.6em, var(--heading-txt-color);
 
-        transition: all 600ms ease-out;
+        transition: all 550ms ease-out;
     }
 
     nav.mobile-nav > .container .logo{
