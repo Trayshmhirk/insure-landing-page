@@ -1,0 +1,545 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+
+
+/* Base styles */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+   /* .styles{
+    color: hsl(216, 30%, 68%);
+    color: hsl(256, 26%, 20%);
+    color: hsl(270, 9%, 17%);
+    color: hsl(273, 4%, 51%);
+    color: hsl(0, 0%, 98%);
+   } */
+
+:root{
+    --font-family-heading: 'DM Serif Display', serif;
+    --font-family-body: 'Karla', sans-serif;
+    --body-txt-color: hsl(216, 30%, 68%);
+    --link-hover-color: hsl(256, 26%, 20%);
+    --header-bg-color: hsl(256, 26%, 20%);
+    --header-txt-color: hsl(0, 0%, 98%);
+    --hero-txt-after-color: hsla(276, 4%, 51%, 0.219);
+    --heading-txt-color: hsl(270, 9%, 17%);
+    --footer-bg-color: hsl(0, 0%, 98%);
+}
+
+body{
+    font-family: var(--font-family-body);
+    font-size: 16px;
+    line-height: 1.6em;
+    color: var(--body-txt-color);
+    position: relative;
+}
+
+/* global styles */
+
+.container{
+    max-width: 1120px;
+    margin: 0em auto;
+}
+
+ul{
+    list-style: none;
+}
+
+a, .footer-head a > img{
+    transition: all 300ms cubic-bezier(0.07, 0.29, 1, 1);
+}
+
+nav a,
+footer .footer-links a{
+    text-decoration: none;
+    color: var(--body-txt-color);
+    font-weight: 700;
+    position: relative;
+}
+
+a:hover{
+    color: var(--link-hover-color);
+}
+
+a::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--link-hover-color);
+    height: 2px;
+    
+    transform: scale(0);
+    transform-origin: right;
+    transition: transform 300ms cubic-bezier(0.07, 0.29, 1, 1);
+}
+
+a:hover::after{
+    transform: scale(1);
+    transform-origin: left;
+}
+
+a, h3, button{
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: .9em;
+}
+
+h1, h2{
+    font-family: var(--font-family-heading);
+    font-weight: 400;
+    color: var(--heading-txt-color);
+}
+
+h3{
+    color: var(--body-txt-color);
+}
+
+img.logo{
+    height: 1.1em;
+}
+
+button{
+    border: 0;
+    padding: .7em 1.5em;
+    background-color: transparent;
+    border: 2px solid hsl(256, 26%, 20%);
+    font-family: var(--font-family-body);
+    font-weight: 700;
+    cursor: pointer;
+
+    transition: all 200ms ease-out;
+}
+
+button.bttn-2{
+    border: 2px ridge var(--header-txt-color);
+    color: var(--header-txt-color);
+}
+
+button.bttn-2:hover{
+    background-color: var(--header-txt-color);
+    color: var(--heading-txt-color);
+    border-style: solid;
+}
+
+input[type=checkbox], nav > .container .btn-1{
+    display: none;
+}
+
+/* Nav */
+
+nav{
+    padding: 1.5em 0;
+    z-index: 9;
+}
+
+nav > .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav > .container div{
+    display: flex;
+    align-items: center;
+    gap: 2.5em;
+}
+
+nav > .container div > ul,
+footer .footer-head > ul{
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+}
+
+nav > .container div button.bttn-1:hover{
+    color: var(--header-txt-color);
+    background-color: var(--link-hover-color);
+}
+
+nav.mobile-nav{
+    display: none;
+}
+
+/* header */
+
+header{
+    background-color: var(--header-bg-color);
+    padding-top: 5.5em;
+    color: var(--header-txt-color);
+    height: 36.5em;
+    position: relative;
+    z-index: 1;
+}
+
+header::before{
+    content: '';
+    position: absolute;
+    top: 22.8em;
+    left: 0;
+    width: 200px;
+    height: 600px;
+    background: url(../images/bg/bg-pattern-intro-left-desktop.svg) no-repeat 0em;
+    z-index: -1;
+}
+
+header::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 65%;
+    bottom: 0;
+    background: url(../images/bg/bg-pattern-intro-right-desktop.svg) no-repeat 110% -5em;
+    background-size: 420px;
+   z-index: 9;
+}
+
+header > .container{
+    display: flex;
+    justify-content: space-between;
+}
+
+header .hero-text{
+    max-width: 550px;
+    padding-top: 3em;
+    letter-spacing: .1px;
+    position: relative;
+}
+
+header .hero-text::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 80%;
+    background-color: var(--header-txt-color);
+    height: 1px;
+}
+
+header .hero-text h1{
+    padding-bottom: .4em;
+    max-width: 500px;
+    font-size: 4.4em;
+    line-height: 1em;
+    color: var(--header-txt-color);
+}
+
+header .hero-text p{
+    padding-bottom: 2em;
+}
+
+/* content section */
+
+section:nth-of-type(1){
+    margin-top: 20em;
+    margin-bottom: 5em;
+}
+
+section:nth-of-type(1) > .container{
+    position: relative;
+    padding: 4em 0em;
+}
+
+section:nth-of-type(1) > .container::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 90%;
+    background-color: var(--body-txt-color);
+    height: 1px;
+}
+
+section h1{
+    font-size: 3.3em;
+    padding-bottom: 1.5em;
+}
+
+section .section-flexbox{
+    display: flex;
+    justify-content: space-between;
+}
+
+.section-flexbox > div{
+    max-width: 350px;
+}
+
+.section-flexbox > div img{
+    width: 4.5em;
+    margin-bottom: 2em;
+}
+
+.section-flexbox > div h2{
+    padding-bottom: .5em;
+}
+
+/* how-we-work section */
+
+section.how-we-work > .container{
+    background: url(../images/bg/bg-pattern-how-we-work-desktop.svg) no-repeat 100% 0em, var(--header-bg-color);
+    background-size: 350px;
+    padding: 3em 4em;
+    margin-bottom: 7em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+section.how-we-work > .container h1{
+    color: var(--header-txt-color);
+    padding: 0;
+    line-height: 1em;
+    max-width: 500px;
+}
+
+/* footer */
+
+footer{
+    background: url(../images/bg/bg-pattern-footer-desktop.svg) no-repeat, var(--footer-bg-color);
+    background-size: 500px;
+    padding: 4em 0em;
+}
+
+footer .footer-head{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1.2em;
+    border-bottom: 1px solid var(--hero-txt-after-color);
+    margin-bottom: 2.7em;
+}
+
+footer ul li a i{
+    color: var(--heading-txt-color);
+    opacity: 0.6;
+    transition: opacity 250ms ease-in;
+}
+
+footer ul li a i:hover{
+    opacity: 1;
+}
+
+footer .footer-links{
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .footer-links div > h3{
+    margin-bottom: 1.5em;
+}
+
+.footer-links div a{
+    color: var(--heading-txt-color);
+}
+
+/* media queries */
+
+@media screen and (max-width: 1200px) {
+    .container{
+        margin: 0em 2.5em;
+    }
+
+    header > .container{
+        gap: 2em;
+    }
+
+    header::after{
+        background: url(../images/bg/bg-pattern-intro-right-desktop.svg) no-repeat 110% -4em;
+        background-size: 300px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    header::before{
+        background-size: 150px;
+    }
+
+    header .hero-text h1{
+        font-size: 3.6em;
+    }
+
+    header > .container > img{
+        width: 50%;
+    }
+
+    section:nth-of-type(1){
+        margin-top: 12em;
+    }
+
+    section .section-flexbox{
+        gap: 1em;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    nav > .container div > ul{
+        display: none;
+    }
+
+    header::after,
+    header::before{
+        display: none;
+    }
+
+    section:nth-of-type(1){
+        margin-top: 5em;
+    }
+
+    section .section-flexbox{
+        text-align: center;
+    }
+
+    section.how-we-work > .container{
+        flex-direction: column;
+        background-image: none;
+        text-align: center;
+    }
+
+    section.how-we-work h1{
+        margin-bottom: .5em;
+    }
+}
+
+@media screen and (max-width: 468px) {
+    .container{
+        margin: 0em 1.5em;
+    }
+
+    /* nav */
+
+    nav{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+    }
+
+    nav button{
+        display: none;
+    }
+
+    /* header */
+
+    header{
+        position: relative;
+        top: 5.3em;
+        height: 59em;
+        padding: 0;
+    }
+
+    header > .container{
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        gap: 0;
+    }
+
+    header > .container > img{
+        order: 1;
+        width: 100%;
+        margin-top: -0.1em;
+    }
+
+    header .hero-text{
+        padding: 3.5em 1.5em;
+        padding-top: 6em;
+        order: 2;
+        text-align: center;
+        background: url(../images/bg/bg-pattern-intro-left-mobile.svg) no-repeat;
+        position: relative;
+    }
+
+    header .hero-text::before{
+        content: '';
+        position: absolute;
+        bottom: -14em;
+        left: 60%;
+        right: 0;
+        height: 350px;
+        background: url(../images/bg/bg-pattern-intro-right-mobile.svg) no-repeat 1.6em .4em;
+        z-index: -1;
+    }
+
+    header .hero-text::after{
+        display: none;
+    }
+
+    header .hero-text h1{
+        font-size: 2.8em;
+    }
+
+    /* sections */
+
+    section:nth-of-type(1){
+        text-align: center;
+        margin-bottom: 0em;
+        margin-top: 14em;
+    }
+
+    section:nth-of-type(1) > .container::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 25%;
+        right: 25%;
+        background-color: var(--body-txt-color);
+        height: 1px;
+    }
+
+    section h1{
+        font-size: 3em;
+    }
+
+    section .section-flexbox{
+        flex-direction: column;
+    }
+
+    .section-flexbox > div{
+        margin: 0em auto;
+        margin-bottom: 2.5em;
+        padding: 0em .2em;
+    }
+
+    .section-flexbox > div img{
+        margin-bottom: 1em;
+    }
+
+    section.how-we-work > .container{
+        padding: 5em 3em;
+        background-image: url(../images/bg/bg-pattern-how-we-work-mobile.svg);
+        background-size: 180px;
+    }
+
+    section.how-we-work > .container h1{
+        font-size: 2.2em;
+        margin-bottom: 1.2em;
+    }
+
+    /* footer */
+
+    footer{
+        padding: 5em 0em; 
+        background-image: url(../images/bg/bg-pattern-footer-mobile.svg);
+        background-size: 365px;
+    }
+
+    footer .footer-head{
+        flex-direction: column;
+        align-items: center;
+        gap: 2em;
+    }    
+
+    footer .footer-links{
+        flex-direction: column;
+        gap: 2em;
+        text-align: center;
+    }
+}
